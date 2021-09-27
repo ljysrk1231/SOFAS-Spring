@@ -29,5 +29,4 @@ public class LoginProcHandler implements CommonHandler {
 			return "/login.jsp?err=0";
 		}
 	}
-
 }

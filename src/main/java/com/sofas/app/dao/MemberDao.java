@@ -4,11 +4,22 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Map;
 import java.util.Vector;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.sofas.app.dto.MemberDto;
 
+@Repository
 public class MemberDao {
+	@Autowired
+	private SqlSession sqlSession;
+	
+	
+	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -23,8 +34,13 @@ public class MemberDao {
 			e.printStackTrace();
 		}
 	}
-
-	// ȸ������
+	
+	public int insertMember(Map<String, Object> map) {
+		   // 값을 여러개 받아와야 할 경우에는 Map 으로 처리
+		return sqlSession.insert("com.sofas.member.insertData", map);
+	}
+	   
+	// 회占쏙옙占쏙옙占쏙옙
 	public int insertMemberData(MemberDto dto) {
 		try {
 			String sql = "insert into member values(null,?,?,?,?,?,?,default,default,default,now())";
@@ -44,7 +60,7 @@ public class MemberDao {
 		return result;
 	}
 
-	// �α���
+	// 占싸깍옙占쏙옙
 	public MemberDto loginMember(String id, String pw) {
 		MemberDto dto = new MemberDto();
 		try {
@@ -74,7 +90,7 @@ public class MemberDao {
 		return dto;
 	}
 	
-	// ȸ������
+	// 회占쏙옙占쏙옙占쏙옙
 	public MemberDto selectMemberData(int idx) {
 		MemberDto dto = new MemberDto();
 		try {
@@ -103,7 +119,7 @@ public class MemberDao {
 		return dto;
 	}
 	
-	// ȸ�� ���� ����
+	// 회占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
 	public int updateMemberData(MemberDto dto) {
 		try {
 			String sql = "update member set member_name=?,phone=?,email=?,address=?,pw="
@@ -130,40 +146,85 @@ public class MemberDao {
 	}
 	
 	
-//	  // ���̵� �ߺ�Ȯ�� Ajax public JSONObject checkIdData(String id) { JSONObject
-//	  json = new JSONObject(); int rtn = 0; try { String sql =
-//	  "select count(member_idx) from member where id=?"; pstmt =
-//	  conn.prepareStatement(sql); pstmt.setString(1, id); rs =
-//	  pstmt.executeQuery();
-//	  
-//	  // count �� 1 �̸� (0���� ũ��) �ش� ���̵� �����Ѵٴ� �ǹ� if (rs.next()) { if
-//	  (rs.getInt(1) > 0) { rtn = 1; // ���Ұ� } json.put("rtn", rtn); } } catch
-//	  (SQLException sqle) { sqle.printStackTrace(); } finally {
-//	  commonDao.freeConnection(rs, pstmt, conn); } return json; }
-//	  
-//	  // �α��� - ���̵�,��й�ȣ, lv Ȯ�� Ajax public JSONObject checkMemberData(String
-//	  id, String pw) { JSONObject json = new JSONObject(); int rtn = 0; try {
-//	  String sql = "select count(member_idx),lv from member where id=? and pw=?";
-//	  pstmt = conn.prepareStatement(sql); pstmt.setString(1, id);
-//	  pstmt.setString(2, pw); rs = pstmt.executeQuery();
-//	  
-//	  if (rs.next()) { if (rs.getInt(1) > 0) { rtn = 1; // �α��� ���� ��ġ }
-//	  json.put("rtn", rtn); json.put("rtn_lv", rs.getInt(2)); } } catch
-//	  (SQLException sqle) { sqle.printStackTrace(); } finally {
-//	  commonDao.freeConnection(rs, pstmt, conn); } return json; }
-//	  
-//	  // ��й�ȣ Ȯ�� Ajax public JSONObject checkPwData(int idx, String pw) {
-//	  JSONObject json = new JSONObject(); int rtn = 0; try { String sql =
-//	  "select count(member_idx) from member where member_idx=? and pw=?"; pstmt =
-//	  conn.prepareStatement(sql); pstmt.setInt(1, idx); pstmt.setString(2, pw); rs
-//	  = pstmt.executeQuery();
-//	  
-//	  if (rs.next()) { if(rs.getInt(1) > 0) { rtn = 1; } json.put("rtn", rtn); } }
-//	  catch (SQLException sqle) { sqle.printStackTrace(); } finally {
-//	  commonDao.freeConnection(rs, pstmt, conn); } return json; }
-	 
+/*	
+	// 占쏙옙占싱듸옙 占쌩븝옙확占쏙옙 Ajax
+	public JSONObject checkIdData(String id) {
+		JSONObject json = new JSONObject();
+		int rtn = 0;
+		try {
+			String sql = "select count(member_idx) from member where id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+
+			// count 占쏙옙 1 占싱몌옙 (0占쏙옙占쏙옙 크占쏙옙) 占쌔댐옙 占쏙옙占싱듸옙 占쏙옙占쏙옙占싼다댐옙 占실뱄옙
+			if (rs.next()) {
+				if (rs.getInt(1) > 0) {
+					rtn = 1; // 占쏙옙占쌀곤옙
+				}
+				json.put("rtn", rtn);
+			}
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		} finally {
+			commonDao.freeConnection(rs, pstmt, conn);
+		}
+		return json;
+	}
+
+	// 占싸깍옙占쏙옙 - 占쏙옙占싱듸옙,占쏙옙橘占싫�, lv 확占쏙옙 Ajax
+	public JSONObject checkMemberData(String id, String pw) {
+		JSONObject json = new JSONObject();
+		int rtn = 0;
+		try {
+			String sql = "select count(member_idx),lv from member where id=? and pw=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				if (rs.getInt(1) > 0) {
+					rtn = 1; // 占싸깍옙占쏙옙 占쏙옙占쏙옙 占쏙옙치
+				}
+				json.put("rtn", rtn);
+				json.put("rtn_lv", rs.getInt(2));
+			}
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		} finally {
+			commonDao.freeConnection(rs, pstmt, conn);
+		}
+		return json;
+	}
 	
-	// ȸ��Ż��
+	// 占쏙옙橘占싫� 확占쏙옙 Ajax
+	public JSONObject checkPwData(int idx, String pw) {
+		JSONObject json = new JSONObject();
+		int rtn = 0;
+		try {
+			String sql = "select count(member_idx) from member where member_idx=? and pw=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, idx);
+			pstmt.setString(2, pw);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				if(rs.getInt(1) > 0) {
+					rtn = 1;
+				}
+				json.put("rtn", rtn);					
+			}
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		} finally {
+			commonDao.freeConnection(rs, pstmt, conn);
+		}
+		return json;
+	}	
+*/ 	 
+	
+	// 회占쏙옙탈占쏙옙
 	public int withdrawalMember(int idx) {
 		try {
 			String sql = "update member set lv=2 where member_idx=?";
