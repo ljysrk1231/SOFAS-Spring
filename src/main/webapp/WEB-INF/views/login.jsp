@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-    <link rel="stylesheet" href="css/login.css" type="text/css">
-    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/login.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="script/login.js" defer></script>
-    <script type="text/javascript" src="script/href_util.js" defer></script>
+    <script type="text/javascript" src="resources/script/login.js" defer></script>
+    <script type="text/javascript" src="resources/script/href_util.js" defer></script>
     <title>SOFAS KOREA</title>
 </head>
 
@@ -32,7 +32,7 @@
     <aside class="page_back" onclick="go_prevPage()"><i class="fas fa-arrow-left"></i></aside>
     <section class="login_scr_wrap">
         <article class="img_area">
-            <img src="img/home/login_img.webp" alt="login_img">
+            <img src="resources/img/home/login_img.webp" alt="login_img">
         </article>
         <article class="login_area">
             <form class="login_form" method="post" name="login_form"> 

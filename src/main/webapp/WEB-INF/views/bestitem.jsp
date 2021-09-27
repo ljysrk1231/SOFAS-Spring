@@ -9,8 +9,8 @@
 	            <div class="bestitem">
 	                <div class="imgbox" onclick="location.href='ItemPage.do?items_idx=${items.items_idx}'">
 	                	<c:set var="i" value="${items.items_img.split('//') }" />
-	                    <div class="changeimg"><img src="img/items/${i[0]}"></div>
-	                    <div class="firstimg"><img src="img/items/${i[1]}"></div> 
+	                    <div class="changeimg"><img src="resources/img/items/${i[0]}"></div>
+	                    <div class="firstimg"><img src="resources/img/items/${i[1]}"></div> 
 	                </div>
 	                <div class="item_infobox">
 	                    <div class="info_left">

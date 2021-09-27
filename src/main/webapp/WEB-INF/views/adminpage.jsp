@@ -9,13 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-    <link rel="stylesheet" href="css/common.css" type="text/css">
-    <link rel="stylesheet" href="css/header.css" type="text/css">
-    <link rel="stylesheet" href="css/footer.css" type="text/css">
-    <link rel="stylesheet" href="css/mypage.css" type="text/css">
-    <link rel="stylesheet" href="css/table.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/header.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/mypage.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/table.css" type="text/css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="script/admin.js" defer></script>
+    <script src="resources/script/admin.js" defer></script>
     <title>SOFAS KOREA</title>
 </head>
 <body>

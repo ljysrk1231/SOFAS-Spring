@@ -7,14 +7,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-    <link rel="stylesheet" href="css/header.css" type="text/css">
-    <link rel="stylesheet" href="css/footer.css" type="text/css">
-    <link rel="stylesheet" href="css/home.css" type="text/css">
-    <link rel="stylesheet" href="css/common.css" type="text/css">
-    <link rel="stylesheet" href="css/sofalist.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/header.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/home.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/sofalist.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="script/sofalist.js" defer></script>
+    <script src="resources/script/sofalist.js" defer></script>
     <title>SOFAS KOREA</title>
 </head>
 <body>
@@ -30,8 +30,8 @@
 	            <div class="bestitem">
 	                <div class="imgbox" onclick="location.href='ItemPage.do?items_idx=${items.items_idx}'">
 	                <c:set var="i" value="${items.items_img.split('//') }" />
-	                    <div class="changeimg"><img src="img/items/${i[0]}"></div>
-	                    <div class="firstimg"><img src="img/items/${i[1]}"></div>
+	                    <div class="changeimg"><img src="resources/img/items/${i[0]}"></div>
+	                    <div class="firstimg"><img src="resources/img/items/${i[1]}"></div>
 	                    <br> 
 	                </div>
 	                <div class="item_infobox">

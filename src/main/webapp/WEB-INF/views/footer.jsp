@@ -4,7 +4,7 @@
     <div class="footer_wrap">
         <div class="footer_top">
             <div class="footer_logo">
-                <img alt="" src="img/home/logo.png">
+                <img alt="" src="resources/img/home/logo.png">
             </div>
             <ul>
                 <li><a href="#">개인정보방침</a></li>

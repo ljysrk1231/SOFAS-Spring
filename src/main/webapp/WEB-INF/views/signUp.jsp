@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/sign_up.css" type="text/css">
-    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/sign_up.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="script/href_util.js" defer></script>
-    <script type="text/javascript" src="script/sign_up.js" defer></script>
+    <script type="text/javascript" src="resources/script/href_util.js" defer></script>
+    <script type="text/javascript" src="resources/script/sign_up.js" defer></script>
     <!-- 우편번호 찾기 script -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <!-- 새로고침시 페이지 제일 위로 -->
@@ -29,7 +29,7 @@
 	<aside class="page_back" onclick="go_prevPage()"><i class="fas fa-arrow-left"></i></aside>
     <section class="sign_up_scr_wrap">
         <article class="img_area">
-            <img src="img/home/signUp_img.webp" alt="signUp_img">
+            <img src="resources/img/home/signUp_img.webp" alt="signUp_img">
         </article>
         <article class="sign_up_area">
             <form class="sign_up_form" name="sign_up_form" method="POST">
