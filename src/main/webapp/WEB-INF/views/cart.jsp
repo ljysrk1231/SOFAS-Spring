@@ -10,13 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap">
-    <link rel="stylesheet" href="css/footer.css" type="text/css">
-    <link rel="stylesheet" href="css/header.css" type="text/css">
-    <link rel="stylesheet" href="css/common.css" type="text/css">
-    <link rel="stylesheet" href="css/cart.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/header.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/cart.css" type="text/css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="script/cookie_manager.js" defer></script>
-    <script type="text/javascript" src="script/cart.js" defer></script>
+    <script type="text/javascript" src="resources/script/cookie_manager.js" defer></script>
+    <script type="text/javascript" src="resources/script/cart.js" defer></script>
 </head>
 <body>
 
@@ -38,7 +38,7 @@
 				<c:forEach var="itemInfo" items="${requestScope.itemInfo }">
 		            <c:set var="items_cnt" value="${items_cnt + 1 }" />
 		            <div class="cart_itemList">
-		                <img src="img/items/${itemInfo.items_img.split('//')[0] }">
+		                <img src="resources/img/items/${itemInfo.items_img.split('//')[0] }">
 		                <div>
 		                    <div>
 		                    	${itemInfo.items_name }

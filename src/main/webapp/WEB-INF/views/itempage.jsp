@@ -11,15 +11,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/common.css" type="text/css">
-    <link rel="stylesheet" href="css/header.css" type="text/css">
-    <link rel="stylesheet" href="css/footer.css" type="text/css">
-    <link rel="stylesheet" href="css/itempage.css?ver=3" type="text/css">
-    <link rel="stylesheet" href="css/bestitem.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/header.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/itempage.css?ver=3" type="text/css">
+    <link rel="stylesheet" href="resources/css/bestitem.css" type="text/css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="script/cookie_manager.js" defer></script>
-    <script type="text/javascript" src="script/itempage.js" defer></script>
-    <script type="text/javascript" src="script/sofalist.js" defer></script>
+    <script type="text/javascript" src="resources/script/cookie_manager.js" defer></script>
+    <script type="text/javascript" src="resources/script/itempage.js" defer></script>
+    <script type="text/javascript" src="resources/script/sofalist.js" defer></script>
     <title>SOFAS KOREA</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
                 <div class="itemimg_container">
                 <c:forEach var="items_img" items="${info.items_img.split('//') }"  >
                     <div class="itemimg_box">
-                        <img src="img/items/${items_img}" alt="">
+                        <img src="resources/img/items/${items_img}" alt="">
                     </div>
                 </c:forEach>
                 </div>
@@ -171,13 +171,13 @@
                             </div>
                             <c:forEach var="review_img" items="${review.review_img.split('//')}">
                             <div class="review_content_img">
-                                <img src="img/review/${review_img }" alt="">
+                                <img src="resources/img/review/${review_img }" alt="">
                             </div>
                             </c:forEach>
                         </div>
                         <c:if test="${review.review_img.length() > 0}"> 
                         <div class="review_img_mini">
-                            <img alt="" src="img/review/${review.review_img.split('//')[0] }" >
+                            <img alt="" src="resources/img/review/${review.review_img.split('//')[0] }" >
                         </div>
                         </c:if>
                     </div>

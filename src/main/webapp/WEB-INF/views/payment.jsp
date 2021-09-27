@@ -9,13 +9,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/footer.css" type="text/css">
-    <link rel="stylesheet" href="css/header.css" type="text/css">
-    <link rel="stylesheet" href="css/common.css" type="text/css">
-    <link rel="stylesheet" href="css/payment.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/header.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/payment.css" type="text/css">
     <script type="text/javascript" src="//code.jquery.com/jquery-1.12.4.js"></script> 
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="script/payment.js" defer></script>
+    <script src="resources/script/payment.js" defer></script>
     <title>SOFAS KOREA</title>
 </head>
 <body>
@@ -37,7 +37,7 @@
 						<input type="hidden" name="items_idx${items_cnt }" value="${iteminfo.items_idx }">
 						<input type="hidden" name="quantity${items_cnt }" value="${iteminfo.quantity }">
 						<div class="payment_itemList">
-			  				<img src="img/items/${iteminfo.items_img.split('//')[0] }">
+			  				<img src="resources/img/items/${iteminfo.items_img.split('//')[0] }">
 			  				<div>
 					      		<div>
 					         		${iteminfo.items_name }<br>

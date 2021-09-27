@@ -11,7 +11,7 @@
             </ul>
         </div>
         <div class="logo">
-            <div class="logoimg" onclick="location.href='Home.do'"><img src="img/home/logo.png"></div>
+            <div class="logoimg" onclick="location.href='Home.do'"><img src="resources/img/home/logo.png"></div>
         </div>
         <div class="logo_homemenu">
             <ul>

@@ -9,21 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-    <link rel="stylesheet" href="css/common.css" type="text/css">
-    <link rel="stylesheet" href="css/header.css" type="text/css">
-    <link rel="stylesheet" href="css/footer.css" type="text/css">
-    <link rel="stylesheet" href="css/mypage.css" type="text/css">
-    <link rel="stylesheet" href="css/accountinfo.css" type="text/css">
-    <link rel="stylesheet" href="css/update_accountinfo.css" type="text/css">
-    <link rel="stylesheet" href="css/orderlist.css" type="text/css">
-    <link rel="stylesheet" href="css/table.css" type="text/css">
-    <link rel="stylesheet" href="css/mypage_withdrawal.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/header.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/mypage.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/accountinfo.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/update_accountinfo.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/orderlist.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/table.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/mypage_withdrawal.css" type="text/css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script type="text/javascript" src="script/update_accountinfo.js" defer></script>
-    <script type="text/javascript" src="script/mypage_withdrawal.js" defer></script>
-    <script type="text/javascript" src="script/mypage.js" defer></script>    
+    <script type="text/javascript" src="resources/script/update_accountinfo.js" defer></script>
+    <script type="text/javascript" src="resources/script/mypage_withdrawal.js" defer></script>
+    <script type="text/javascript" src="resources/script/mypage.js" defer></script>    
     <title>SOFAS KOREA</title>
 </head>
 <body>

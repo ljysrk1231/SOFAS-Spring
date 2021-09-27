@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/common.css" type="text/css">
-    <link rel="stylesheet" href="css/PaymentCompletePage.css" type="text/css">
-    <script type="text/javascript" src="script/href_util.js" defer></script>
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/PaymentCompletePage.css" type="text/css">
+    <script type="text/javascript" src="resources/script/href_util.js" defer></script>
     <title>SOFAS KOREA</title>
 
 </head>
@@ -18,7 +18,7 @@
 <body>
     <section class="payment_complete_page_scr_wrap">
         <article class="img_area">
-            <img src="img/home/PaymentCompletePage.webp" alt="PaymentCompletePage.webp">
+            <img src="resources/img/home/PaymentCompletePage.webp" alt="PaymentCompletePage.webp">
         </article>
         <article class="payment_complete_page_area">
             <div class="content">

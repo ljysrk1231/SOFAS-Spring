@@ -51,7 +51,7 @@
             	<div class="goodsinfo_img_container">
             	<c:forEach var="i" items="${info.items_img.split('//') }">
             		<div class="goodsinfo_img_box">
-                		<img alt="" src="img/items/${i}">                                		
+                		<img alt="" src="resources/img/items/${i}">                                		
             		</div>
             	</c:forEach>
             	</div>

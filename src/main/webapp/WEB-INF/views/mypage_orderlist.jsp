@@ -12,7 +12,7 @@
 					<tr>
 						<td style="width: 100px; height: 100px;" class="orderlist_imgtd" style="cursor: pointer" onclick="location.href='MyPage.do?pg=orderDetails&order_num=${i.order_num}'">
 							<div class="orderlist_imgdiv">
-								<img src="img/items/${i.items_img.split('//')[0]}">
+								<img src="resources/img/items/${i.items_img.split('//')[0]}">
 							</div>
 						</td>
 						<td style="cursor: pointer" onclick="location.href='MyPage.do?pg=orderDetails&order_num=${i.order_num}'">

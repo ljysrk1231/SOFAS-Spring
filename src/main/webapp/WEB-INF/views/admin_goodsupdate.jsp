@@ -50,7 +50,7 @@
             <td>이미지</td>
             <td class="items_update_box">
             	<div class="items_update_img_box">
-                	<img alt="" src="img/items/${i}">
+                	<img alt="" src="resources/img/items/${i}">
             	</div>
             	<input type="hidden" value="${i }" name="img${cnt }">
             	<input type="button" value="삭제" class="img_del_btn">

@@ -12,7 +12,7 @@
 			<tr>
 				<td style="width: 100px; height: 100px;">
 					<div class="orderlist_imgdiv">
-						<img src="img/items/${items_info.items_img.split('//')[0]}">
+						<img src="resources/img/items/${items_info.items_img.split('//')[0]}">
 					</div>
 				</td>
 				<td>
