@@ -28,14 +28,12 @@ public class HomeController {
 	
 	@Autowired
 	ItemsDao itemsDao;
-	
-<<<<<<< HEAD
-=======
+
 	@Autowired
 	ReviewDao reviewDao;
 	
 
->>>>>>> upstream/main
+
 	@RequestMapping("Home.do")
 	public String home(Model model) {
 		model.addAttribute("Items_ReviewDto", itemsDao.SelectBestItem());
