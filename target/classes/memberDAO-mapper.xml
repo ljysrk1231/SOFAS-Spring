@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.sofas.member">
+
+	<insert id="insertData">
+		insert into member values(null,#{id},#{pw},#{member_name},#{email},#{address},#{phone},default,default,default,now())
+	</insert>
+	
+	<select id="loginData" resultType="com.sofas.app.bean.MemberDto">
+		select * from member where id=#{id} and pw=#{pw}
+	</select>
+	
+	<select id="selectOneData" resultType="com.sofas.app.bean.MemberDto">
+		select * from member where member_idx=#{member_idx}
+	</select>
+	
+	<select id="updateData" resultType="Integer">
+		update member set member_name=#{member_name},phone=#{phone},email=#{email},address=#{address},pw=
+		case when #{pw}!='' then #{pw} 
+		else pw 
+		end 
+		where member_idx=#{member_idx}
+	</select>
+	
+	
+	<select id="checkIdData" resultType="Integer">
+		select count(member_idx) from member where id=#{id}
+	</select>
+	
+	<select id="checkMemberData" resultType="HashMap">
+		select count(member_idx) as cnt,lv from member where id=#{id} and pw=#{pw}
+	</select>
+	
+	<select id="checkPwData" resultType="Integer">
+		select count(member_idx) from member where member_idx=#{member_idx} and pw=#{pw}
+	</select>
+	<!-- JSON 어떻게????? -->
+	
+	
+	<select id="getListData" resultType="com.sofas.app.bean.MemberDto">
+		select * from member order by member_idx desc
+	</select>
+	
+	<update id="withdrawalData">
+		update member set lv=2 where member_idx=#{member_idx}
+	</update>
+	
+	<update id="blockData">
+		update member set lv=1 where member_idx=#{member_idx}
+	</update>
+	
+	
+</mapper>

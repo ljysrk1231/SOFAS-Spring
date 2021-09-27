@@ -31,27 +31,32 @@ $(document).ready(function () {
         }
     }); 
     
+    
     // 로그인
     $(".login_submit").on({
        	click: function() {
     		var id = $(".login_info input[name=id]");
     		var pw = $(".login_info input[name=pw]");
+    		var data = {pg: "login", id:id.val(), pw:pw.val()}
     		$.ajax({
     			type: "post",
-    			url: "AjaxProc.do?pg=login",
-    			data: {"id":id.val(), "pw":pw.val()},
+    			url: "AjaxProc.do",
+    			data:JSON.stringify(data),
+    			contentType:"application/json; charset=utf8",
     			dataType: "json",
 				success:function(args){
-					if(args.rtn_lv == 1) {
+					if(args.lv == 1) {
 						alert("관리자에 의해 차단된 계정입니다.");
 						blurProcess()
-					} else if(args.rtn_lv == 2) {
+					} else if(args.lv == 2) {
 						alert("탈퇴한 계정입니다.");
 						blurProcess()
-					} else if(args.rtn > 0) {	// 로그인 정보 일치
+					} else if(args.cnt > 0) {	// 로그인 정보 일치
+						alert(1);
 						document.login_form.action = "LoginProc.do";
 						document.login_form.submit();
 					} else {	// 로그인 정보 불일치
+					alert("한글");
 						$(".login_info_check").css("display","block");
 						$(".login_info_check").text("죄송합니다. 로그인에 실패했습니다.")
 						$(".login_info_check").append("<br><span style='color:blue'>아이디(ID)와 비밀번호</span>를");
