@@ -9,9 +9,8 @@
 	Hello world!  
 </h1>
 
-수정테스트ㄹㅇㅁㄹㅇㅁㄴ
-ㅋㅌㅊㅍ
+한글 테스트
 
-<P>  The time on the server is ${sㅇerverTime}. </P>
+<P>  The time on the server is ${sãerverTime}. </P>
 </body>
 </html>
