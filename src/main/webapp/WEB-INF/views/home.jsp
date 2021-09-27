@@ -10,15 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/header.css?ver" />
-    <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/home.css?ver=1" />
-    <link rel="stylesheet" href="css/bestitem.css" />
+    <link rel="stylesheet" href="resources/css/common.css" />
+    <link rel="stylesheet" href="resources/css/header.css?ver" />
+    <link rel="stylesheet" href="resources/css/footer.css" />
+    <link rel="stylesheet" href="resources/css/home.css?ver=1" />
+    <link rel="stylesheet" href="resources/css/bestitem.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
-    <script src="script/home.js" defer></script>
-    <script src="script/sofalist.js" defer></script>
+    <script src="resources/script/home.js" defer></script>
+    <script src="resources/script/sofalist.js" defer></script>
     <title>SOFAS KOREA</title>
 </head>
 
@@ -33,7 +33,7 @@
     <div class="home_wrap">
 
         <div class="main_first">
-            <img src="img/home/home_sofas.png">
+            <img src="resources/img/home/home_sofas.png">
             <div class="main_first_fonts">
                 <div>
                     <p style="font-weight: bolder; font-size: 25px;  margin-bottom: 5px;"> Your simple guide to buying a new sofa </p>
@@ -55,9 +55,9 @@
             </div>
         </div>
         <div class="main_sofas">
-            <div class="photo_sofas1"><img src="img/home/home_sofa1.png"></div>
-            <div class="photo_sofas2"><img src="img/home/home_sofa2.png"></div>
-            <div class="photo_sofas3"><img src="img/home/home_sofa3.png"></div>
+            <div class="photo_sofas1"><img src="resources/img/home/home_sofa1.png"></div>
+            <div class="photo_sofas2"><img src="resources/img/home/home_sofa2.png"></div>
+            <div class="photo_sofas3"><img src="resources/img/home/home_sofa3.png"></div>
         </div>
      
         <div class="main_notice">
@@ -93,6 +93,6 @@
 
     
    </div> <!--home_wrap div-->
-<jsp:include page="footer.jsp" />
+<%-- <jsp:include page="footer.jsp" /> --%>
 </body>
 </html>
