@@ -25,7 +25,18 @@
 		where member_idx=#{member_idx}
 	</select>
 	
-
+	
+	<select id="checkIdData" resultType="Integer">
+		select count(member_idx) from member where id=#{id}
+	</select>
+	
+	<select id="checkMemberData" resultType="HashMap">
+		select count(member_idx) as cnt,lv from member where id=#{id} and pw=#{pw}
+	</select>
+	
+	<select id="checkPwData" resultType="Integer">
+		select count(member_idx) from member where member_idx=#{member_idx} and pw=#{pw}
+	</select>
 	<!-- JSON 어떻게????? -->
 	
 	

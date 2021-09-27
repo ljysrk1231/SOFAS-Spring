@@ -4,18 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
-<<<<<<< HEAD
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.sofas.app.dto.MemberDto;
-=======
 import com.sofas.app.bean.MemberDto;
->>>>>>> upstream/main
+
 
 @Repository
 public class MemberDao {
@@ -29,7 +28,7 @@ public class MemberDao {
 	ResultSet rs = null;
 	int result = 0;
 	CommonDao commonDao = null;
-
+/*
 	public MemberDao() {
 		commonDao = new CommonDao();
 		try {
@@ -38,11 +37,27 @@ public class MemberDao {
 			e.printStackTrace();
 		}
 	}
+*/
+	
 	
 	public int insertMember(Map<String, Object> map) {
 		   // 값을 여러개 받아와야 할 경우에는 Map 으로 처리
 		return sqlSession.insert("com.sofas.member.insertData", map);
 	}
+	
+	public MemberDto loginMember(Map<String, String> map) {
+		return sqlSession.selectOne("com.sofas.member.loginData", map);
+	}
+	
+	public HashMap<String, Object> checkMemberData(Map<String, String> map) {
+		return sqlSession.selectOne("com.sofas.member.checkMemberData", map);
+	}
+	
+	
+	
+	
+	
+	
 	   
 	// 회占쏙옙占쏙옙占쏙옙
 	public int insertMemberData(MemberDto dto) {
@@ -63,7 +78,7 @@ public class MemberDao {
 		}
 		return result;
 	}
-
+/*
 	// 占싸깍옙占쏙옙
 	public MemberDto loginMember(String id, String pw) {
 		MemberDto dto = new MemberDto();
@@ -93,7 +108,7 @@ public class MemberDao {
 		}
 		return dto;
 	}
-	
+	*/
 	// 회占쏙옙占쏙옙占쏙옙
 	public MemberDto selectMemberData(int idx) {
 		MemberDto dto = new MemberDto();
@@ -285,4 +300,6 @@ public class MemberDao {
 		
 		return result;
 	}
+
+
 }

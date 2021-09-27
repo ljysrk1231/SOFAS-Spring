@@ -18,15 +18,16 @@ public class LoginProcHandler implements CommonHandler {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		MemberDao dao = new MemberDao();
-		MemberDto dto = dao.loginMember(id, pw);
-		
-		if(dto.getMember_idx() > 0) {
-			HttpSession session = request.getSession();
-			session.setAttribute("memberInfo", dto);
-			return "Home.do";
-		} else {
-			return "/login.jsp?err=0";
-		}
+//		MemberDao dao = new MemberDao();
+//	//	MemberDto dto = dao.loginMember(id, pw);
+//		
+//		if(dto.getMember_idx() > 0) {
+//			HttpSession session = request.getSession();
+//			session.setAttribute("memberInfo", dto);
+//			return "Home.do";
+//		} else {
+//			return "/login.jsp?err=0";
+//		}
+		return null;
 	}
 }
