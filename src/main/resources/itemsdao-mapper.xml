@@ -4,34 +4,43 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.sofas.items">
-
-	<!-- 맵퍼에는 insert/update/delete 일 경우 return 타입이 필요없다. -->
-	
-<!-- 	<insert id="insertData">     
-									Map 에서 받아온 값들
-		insert into fileboard values (null, #{txt}, #{filename})
-	</insert>
-	
-	
-	<select id="selectData" resultType="com.hs.myapp.bean.FileDTO">
-		select * from fileboard
-	</select>
-	
-	
-	<delete id="deleteData">
-						넘어온 변수이름 그대로 써줌.
-		delete from fileboard where idx=#{idx}
-	</delete>
-	
-	
-	select 는 return 타입을 반드시 써줘야한다.
-	<select id="selectOneData" resultType="String">
-		select filename from fileboard where idx = #{idx}
-	</select> -->
-	
 	
 	<select id="selectBestItem" resultType="com.sofas.app.bean.Items_ReviewDto">
-		SELECT items.items_idx, items_name, price, items_img, items_category, sales_cnt, (SELECT AVG(review_star) FROM review WHERE items.items_idx = review.items_idx) AS items_star_avg, (SELECT COUNT(review_idx) FROM review WHERE items.items_idx = review.items_idx) AS items_review_cnt FROM items ORDER BY sales_cnt desc
+		SELECT 
+		items.items_idx, 
+		items_name, price, 
+		items_img, 
+		items_category, 
+		sales_cnt, 
+		(SELECT AVG(review_star) FROM review WHERE items.items_idx = review.items_idx) AS items_star_avg, 
+		(SELECT COUNT(review_idx) FROM review WHERE items.items_idx = review.items_idx) AS items_review_cnt 
+		FROM items 
+		ORDER BY sales_cnt desc
+	</select>
+	
+	<select id="selectItemsList" resultType="com.sofas.app.bean.Items_ReviewDto">
+		SELECT 
+		items.items_idx, 
+		items_name, price, 
+		items_img, 
+		items_category, 
+		(SELECT AVG(review_star) FROM review WHERE items.items_idx = review.items_idx) AS items_star_avg, 
+		(SELECT COUNT(review_idx) FROM review WHERE items.items_idx = review.items_idx) AS items_review_cnt 
+		FROM items
+	</select>
+	
+	<select id="getItemInfo" resultType="com.sofas.app.bean.Items_ReviewDto">
+		SELECT 
+		items.items_idx, 
+		items_name, 
+		price, 
+		items_img, 
+		items_info1, items_info2, items_info3, items_info4, 
+		stock, 
+		(SELECT AVG(review_star) FROM review WHERE items.items_idx = review.items_idx) AS items_star_avg, 
+		(SELECT COUNT(review_idx) FROM review WHERE items.items_idx = review.items_idx) AS items_review_cnt 
+		FROM items 
+		WHERE items_idx=?
 	</select>
   
 </mapper>

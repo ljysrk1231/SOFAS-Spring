@@ -77,7 +77,7 @@
 		        </c:forEach>
 		        <input type="hidden" name="items_cnt" value="${items_cnt }">
         	</c:if>
-    	</div><!--cart_itemInfo 끝-->
+    	</div><!--cart_itemInfo 끝났다-->
          
 	</div> <!-- cart_aside 끝 -->
 

@@ -144,36 +144,8 @@ public class ItemsDao {
 		return result;
 	}
 	
-	public Vector<Items_ReviewDto> SelectItemsList() {
-		Vector<Items_ReviewDto> items = new Vector<>();
-		try {
-			String sql = "SELECT items.items_idx,"
-					+ " items_name, price, "
-					+ "items_img, "
-					+ "items_category, "
-					+ "(SELECT AVG(review_star) FROM review WHERE items.items_idx = review.items_idx) AS items_star_avg, "
-					+ "(SELECT COUNT(review_idx) FROM review WHERE items.items_idx = review.items_idx) AS items_review_cnt "
-					+ "FROM items";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				Items_ReviewDto items_RDto = new Items_ReviewDto();
-				items_RDto.setItems_idx(rs.getInt(1));
-				items_RDto.setItems_name(rs.getString(2));
-				items_RDto.setPrice(rs.getInt(3));
-				items_RDto.setItems_img(rs.getString(4));
-				items_RDto.setItems_category(rs.getString(5));
-				items_RDto.setItems_star_avg(rs.getDouble(6));
-				items_RDto.setItems_review_cnt(rs.getInt(7));
-				items.add(items_RDto);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			commonDao.freeConnection(rs, pstmt, conn);
-		}
-		
-		return items;
+	public List<Items_ReviewDto> SelectItemsList() {	
+		return sqlSession.selectList("com.sofas.items.selectItemsList");
 	}
 	
 	public List<Items_ReviewDto> SelectBestItem() {
@@ -181,40 +153,7 @@ public class ItemsDao {
 	}
 	
 	public Items_ReviewDto getItemInfo(int idx) {
-		Items_ReviewDto items_RDto = new Items_ReviewDto();
-		try {
-			String sql = "SELECT items.items_idx,"
-					+ " items_name, "
-					+ "price, "
-					+ "items_img, "
-					+ "items_info1, items_info2, items_info3, items_info4, "
-					+ "stock, "
-					+ "(SELECT AVG(review_star) FROM review WHERE items.items_idx = review.items_idx) AS items_star_avg, "
-					+ "(SELECT COUNT(review_idx) FROM review WHERE items.items_idx = review.items_idx) AS items_review_cnt "
-					+ "FROM items "
-					+ "WHERE items_idx=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, idx);
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				items_RDto.setItems_idx(rs.getInt(1));
-				items_RDto.setItems_name(rs.getString(2));
-				items_RDto.setPrice(rs.getInt(3));
-				items_RDto.setItems_img(rs.getString(4));
-				items_RDto.setItems_info1(rs.getString(5));
-				items_RDto.setItems_info2(rs.getString(6));
-				items_RDto.setItems_info3(rs.getString(7));
-				items_RDto.setItems_info4(rs.getString(8));
-				items_RDto.setStock(rs.getInt(9));
-				items_RDto.setItems_star_avg(rs.getDouble(10));
-				items_RDto.setItems_review_cnt(rs.getInt(11));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			commonDao.freeConnection(rs, pstmt, conn);
-		}
-		return items_RDto;
+		return sqlSession.selectOne("com.sofas.items.getItemInfo");
 	}
 	
 	public int sales_cntUpdate(int items_idx, int sales_cnt) {

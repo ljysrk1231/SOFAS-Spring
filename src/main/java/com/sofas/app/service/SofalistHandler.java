@@ -17,8 +17,8 @@ public class SofalistHandler implements CommonHandler {
 	public String process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		ItemsDao itemsDao = new ItemsDao();
-		Vector<Items_ReviewDto> itemVe = itemsDao.SelectItemsList();
-		request.setAttribute("Items_ReviewDto", itemVe);
+//		Vector<Items_ReviewDto> itemVe = itemsDao.SelectItemsList();
+//		request.setAttribute("Items_ReviewDto", itemVe);
 		
 		return "/sofalist.jsp";
 	}

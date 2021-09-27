@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.sofas.app.bean.MemberDto;
 import com.sofas.app.dao.ItemsDao;
 import com.sofas.app.dao.MemberDao;
+import com.sofas.app.dao.ReviewDao;
 
 /**
  * Handles requests for the application home page.
@@ -28,10 +29,44 @@ public class HomeController {
 	@Autowired
 	ItemsDao itemsDao;
 	
+<<<<<<< HEAD
+=======
+	@Autowired
+	ReviewDao reviewDao;
+	
+
+>>>>>>> upstream/main
 	@RequestMapping("Home.do")
 	public String home(Model model) {
 		model.addAttribute("Items_ReviewDto", itemsDao.SelectBestItem());
 		return "home";
+	}
+	
+	@RequestMapping("Sofalist.do")
+	public String sofalist(Model model) {
+		model.addAttribute("Items_ReviewDto", itemsDao.SelectItemsList());
+		return "sofalist";
+	}
+	
+	@RequestMapping("Acclist.do")
+	public String acclist(Model model) {
+		model.addAttribute("Items_ReviewDto", itemsDao.SelectItemsList());
+		return "acclist";
+	}
+	
+	@RequestMapping("Stoollist.do")
+	public String stoollist(Model model) {
+		model.addAttribute("Items_ReviewDto", itemsDao.SelectItemsList());
+		return "stoollist";
+	}
+	
+	@RequestMapping("ItemPage.do")
+	public String itempage(Model model, int items_idx) {
+		model.addAttribute("items_infoDto", itemsDao.getItemInfo(items_idx));
+		model.addAttribute("Items_ReviewDto", itemsDao.SelectBestItem());
+		model.addAttribute("items_Rdto", reviewDao.getReviewInfo(items_idx));
+		
+		return "itempage";
 	}
 	
 ///////////////////////////////////////////////
