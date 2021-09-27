@@ -28,7 +28,6 @@ public class HomeController {
 	@Autowired
 	ItemsDao itemsDao;
 	
-
 	@RequestMapping("Home.do")
 	public String home(Model model) {
 		model.addAttribute("Items_ReviewDto", itemsDao.SelectBestItem());
@@ -39,21 +38,38 @@ public class HomeController {
 	@Autowired
 	MemberDao memberDao;
 	
+	@RequestMapping("SignUp.do")
+	public String signUp() {
+		return "signUp";
+	}
+	
+	@RequestMapping("SignUpProc.do")
+	public String signUpProc(Model model, HashMap<String, Object> map) {
+		int result = memberDao.insertMember(map);	
+		if(result <= 0) {
+			model.addAttribute("err", 0);
+			return "signUp";
+		} 
+		return "signUp_success";
+	}
+	
 	@RequestMapping("Login.do")
 	public String login() {
-
 		return "login";
 	}
 
 	@RequestMapping("LoginProc.do")
-	public String loginProc(String id, String pw, HttpSession session) {
+	public String loginProc(Model model, String id, String pw, HttpSession session) {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("id",id);
 		map.put("pw",pw);
 		MemberDto dto = memberDao.loginMember(map);
-		if(dto != null) {
-			session.setAttribute("memberInfo", dto);
-		}
+		
+		if(dto.getMember_idx() <= 0) {
+			model.addAttribute("err", 0);
+			return "login";
+		} 
+		session.setAttribute("memberInfo", dto);
 		return "redirect:/Home.do";
 	}
 	
@@ -65,22 +81,23 @@ public class HomeController {
 	
 	@RequestMapping(value="AjaxProc.do", method=RequestMethod.POST)
 	@ResponseBody
-	public HashMap<String, Object> ajaxProc(@RequestBody HashMap<String, String> requestMap) {
+	public HashMap<String, Object> ajaxProc(@RequestBody HashMap<String, Object> requestMap) {
 		HashMap<String, Object> map = null;
 		if(requestMap.get("pg").equals("signUp")) {
-		//	map.put("res", memberDao.checkMemberData(id, pw));
+			int cnt = memberDao.checkIdData(requestMap.get("id")+"");
+			map = new HashMap<String, Object>();
+			map.put("cnt", cnt);
 		} else if(requestMap.get("pg").equals("login")) {
-			HashMap<String, String> checkMemberMap = new HashMap<String, String>();
+			HashMap<String, Object> checkMemberMap = new HashMap<String, Object>();
 			checkMemberMap.put("id",requestMap.get("id"));
 			checkMemberMap.put("pw",requestMap.get("pw"));
 			map = memberDao.checkMemberData(checkMemberMap);
 		} else if(requestMap.get("pg").equals("pw_check")) {
-		//	map.put("res", memberDao.checkPwData(idx, pw));
+			int cnt = memberDao.checkPwData(requestMap);
+			map = new HashMap<String, Object>();
+			map.put("cnt", cnt);
 		} 
-	
-		
-		return map;
-				
+		return map;				
 	}
 /////////////////////////////////////////////
 	

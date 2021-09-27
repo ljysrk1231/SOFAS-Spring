@@ -122,12 +122,13 @@ $(document).ready(function () {
     $(".duplication_check").on({
     	click: function() {
     		var id_val = $(".sign_up_area input[name=id]").val();
-    		var params="id="+id_val;
+    		var data = {pg: "signUp", id:id_val}
     		id_duplication_check = false;
     		$.ajax({
     			type: "post",
-    			url: "AjaxProc.do?pg=signUp",
-    			data: params,
+    			url: "AjaxProc.do",
+    			data:JSON.stringify(data),
+    			contentType:"application/json; charset=utf8",
     			dataType: "json",
 				success:function(args){
 					if (id_val == "" || id_val.length < 4 || /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(id_val) 
@@ -135,7 +136,7 @@ $(document).ready(function () {
 					        // 아이디 - 공백, 4자이하, 한글/공백/특수문자 제외
 						$(".label_id").next().css("color","red");
 						$(".sign_up_area input[name=id]").focus();
-					} else if(args.rtn > 0) {
+					} else if(args.cnt > 0) {
 						$(".label_id").next().css("color","red");
 						$(".label_id").next().text("이미 사용중인 아이디입니다.");	
 					} else {

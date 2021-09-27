@@ -41,7 +41,6 @@ public class MemberDao {
 	
 	
 	public int insertMember(Map<String, Object> map) {
-		   // 값을 여러개 받아와야 할 경우에는 Map 으로 처리
 		return sqlSession.insert("com.sofas.member.insertData", map);
 	}
 	
@@ -49,7 +48,13 @@ public class MemberDao {
 		return sqlSession.selectOne("com.sofas.member.loginData", map);
 	}
 	
-	public HashMap<String, Object> checkMemberData(Map<String, String> map) {
+	public int checkIdData(String id) {
+		return sqlSession.selectOne("com.sofas.member.checkIdData", id);
+	}
+	public int checkPwData(Map<String, Object> map) {
+		return sqlSession.selectOne("com.sofas.member.checkIdData", map);
+	}
+	public HashMap<String, Object> checkMemberData(Map<String, Object> map) {
 		return sqlSession.selectOne("com.sofas.member.checkMemberData", map);
 	}
 	
@@ -78,9 +83,9 @@ public class MemberDao {
 		}
 		return result;
 	}
-/*
+
 	// 占싸깍옙占쏙옙
-	public MemberDto loginMember(String id, String pw) {
+	public MemberDto loginMember1(String id, String pw) {
 		MemberDto dto = new MemberDto();
 		try {
 			String sql = "select * from member where id=? and pw=?";
@@ -108,7 +113,7 @@ public class MemberDao {
 		}
 		return dto;
 	}
-	*/
+	
 	// 회占쏙옙占쏙옙占쏙옙
 	public MemberDto selectMemberData(int idx) {
 		MemberDto dto = new MemberDto();
