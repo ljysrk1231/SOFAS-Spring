@@ -10,7 +10,8 @@
 </h1>
 
 수정테스트ㄹㅇㅁㄹㅇㅁㄴ
+ㅋㅌㅊㅍ
 
-<P>  The time on the server is ${serverTime}. </P>
+<P>  The time on the server is ${sㅇerverTime}. </P>
 </body>
 </html>
