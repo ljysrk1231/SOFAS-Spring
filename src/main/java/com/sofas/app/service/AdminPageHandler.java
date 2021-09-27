@@ -8,12 +8,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sofas.app.bean.ItemsDto;
+import com.sofas.app.bean.MemberDto;
+import com.sofas.app.bean.Orderlist_joinDto;
 import com.sofas.app.dao.ItemsDao;
 import com.sofas.app.dao.MemberDao;
 import com.sofas.app.dao.OrderlistDao;
-import com.sofas.app.dto.ItemsDto;
-import com.sofas.app.dto.MemberDto;
-import com.sofas.app.dto.Orderlist_joinDto;
 
 public class AdminPageHandler implements CommonHandler {
 	

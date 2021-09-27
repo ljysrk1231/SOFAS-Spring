@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-import com.sofas.app.dto.AnnounceDto;
-import com.sofas.app.dto.Announce_joinDto;
+import com.sofas.app.bean.AnnounceDto;
+import com.sofas.app.bean.Announce_joinDto;
 
 public class AnnounceDao {
 	Connection conn = null;

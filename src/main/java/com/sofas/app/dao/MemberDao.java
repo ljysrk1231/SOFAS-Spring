@@ -7,11 +7,15 @@ import java.sql.SQLException;
 import java.util.Map;
 import java.util.Vector;
 
+<<<<<<< HEAD
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sofas.app.dto.MemberDto;
+=======
+import com.sofas.app.bean.MemberDto;
+>>>>>>> upstream/main
 
 @Repository
 public class MemberDao {

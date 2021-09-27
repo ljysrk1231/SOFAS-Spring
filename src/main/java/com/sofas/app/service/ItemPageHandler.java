@@ -7,10 +7,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sofas.app.bean.Items_ReviewDto;
+import com.sofas.app.bean.Review_ListDto;
 import com.sofas.app.dao.ItemsDao;
 import com.sofas.app.dao.ReviewDao;
-import com.sofas.app.dto.Items_ReviewDto;
-import com.sofas.app.dto.Review_ListDto;
 
 public class ItemPageHandler implements CommonHandler {
 
@@ -24,8 +24,8 @@ public class ItemPageHandler implements CommonHandler {
 		request.setAttribute("items_infoDto", items_RDto);
 
 		itemsDao = new ItemsDao();
-		Vector<Items_ReviewDto> itemVe = itemsDao.SelectBestItem();
-		request.setAttribute("Items_ReviewDto", itemVe);
+//		Vector<Items_ReviewDto> itemVe = itemsDao.SelectBestItem();
+//		request.setAttribute("Items_ReviewDto", itemVe);
 		
 		ReviewDao reviewDao = new ReviewDao();
 		Vector<Review_ListDto> items_review = reviewDao.getReviewInfo(items_idx);

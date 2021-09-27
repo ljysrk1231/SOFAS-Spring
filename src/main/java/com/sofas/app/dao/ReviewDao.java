@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-import com.sofas.app.dto.ReviewDto;
-import com.sofas.app.dto.Review_ListDto;
+import com.sofas.app.bean.ReviewDto;
+import com.sofas.app.bean.Review_ListDto;
 
 public class ReviewDao {
 	Connection conn = null;

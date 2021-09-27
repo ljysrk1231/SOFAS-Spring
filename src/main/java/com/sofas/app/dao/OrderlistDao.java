@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-import com.sofas.app.dto.OrderlistDto;
-import com.sofas.app.dto.Orderlist_joinDto;
+import com.sofas.app.bean.OrderlistDto;
+import com.sofas.app.bean.Orderlist_joinDto;
 
 
 public class OrderlistDao {

@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.sofas.app.dto.OrderlistItemDto;
+import com.sofas.app.bean.OrderlistItemDto;
 
 
 public class OrderlistItemDao {

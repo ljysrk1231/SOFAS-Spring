@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.sofas.app.bean.ItemsDto;
 import com.sofas.app.dao.ItemsDao;
-import com.sofas.app.dto.ItemsDto;
 
 public class GoodsUpdateProcHandler implements CommonHandler {
 
