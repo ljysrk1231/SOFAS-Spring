@@ -31,7 +31,16 @@
 	
 	
 	<select id="selectBestItem" resultType="com.sofas.app.bean.Items_ReviewDto">
-		SELECT items.items_idx, items_name, price, items_img, items_category, sales_cnt, (SELECT AVG(review_star) FROM review WHERE items.items_idx = review.items_idx) AS items_star_avg, (SELECT COUNT(review_idx) FROM review WHERE items.items_idx = review.items_idx) AS items_review_cnt FROM items ORDER BY sales_cnt desc
+		SELECT 
+		items.items_idx, 
+		items_name, price, 
+		items_img, 
+		items_category, 
+		sales_cnt, 
+		(SELECT AVG(review_star) FROM review WHERE items.items_idx = review.items_idx) AS items_star_avg, 
+		(SELECT COUNT(review_idx) FROM review WHERE items.items_idx = review.items_idx) AS items_review_cnt 
+		FROM items 
+		ORDER BY sales_cnt desc;
 	</select>
   
 </mapper>

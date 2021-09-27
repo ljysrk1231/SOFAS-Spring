@@ -52,11 +52,9 @@ $(document).ready(function () {
 						alert("탈퇴한 계정입니다.");
 						blurProcess()
 					} else if(args.cnt > 0) {	// 로그인 정보 일치
-						alert(1);
 						document.login_form.action = "LoginProc.do";
 						document.login_form.submit();
 					} else {	// 로그인 정보 불일치
-					alert("한글");
 						$(".login_info_check").css("display","block");
 						$(".login_info_check").text("죄송합니다. 로그인에 실패했습니다.")
 						$(".login_info_check").append("<br><span style='color:blue'>아이디(ID)와 비밀번호</span>를");
