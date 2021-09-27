@@ -28,8 +28,8 @@ public class ItemPageHandler implements CommonHandler {
 //		request.setAttribute("Items_ReviewDto", itemVe);
 		
 		ReviewDao reviewDao = new ReviewDao();
-		Vector<Review_ListDto> items_review = reviewDao.getReviewInfo(items_idx);
-		request.setAttribute("items_Rdto", items_review);
+//		Vector<Review_ListDto> items_review = reviewDao.getReviewInfo(items_idx);
+//		request.setAttribute("items_Rdto", items_review);
 		
 		
 		return "/itempage.jsp";
