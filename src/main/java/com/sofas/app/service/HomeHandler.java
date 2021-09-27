@@ -7,8 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sofas.app.bean.Items_ReviewDto;
 import com.sofas.app.dao.ItemsDao;
-import com.sofas.app.dto.Items_ReviewDto;
 
 
 public class HomeHandler implements CommonHandler {
@@ -17,8 +17,8 @@ public class HomeHandler implements CommonHandler {
 	public String process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		ItemsDao itemsDao = new ItemsDao();
-		Vector<Items_ReviewDto> itemVe = itemsDao.SelectBestItem();
-		request.setAttribute("Items_ReviewDto", itemVe);
+//		Vector<Items_ReviewDto> itemVe = itemsDao.SelectBestItem();
+//		request.setAttribute("Items_ReviewDto", itemVe);
 		
 		return "/home.jsp";
 	}

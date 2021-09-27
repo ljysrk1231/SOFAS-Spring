@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.sofas.app.bean.MemberDto;
 import com.sofas.app.dao.MemberDao;
-import com.sofas.app.dto.MemberDto;
 
 
 public class SignUpProcHandler implements CommonHandler {

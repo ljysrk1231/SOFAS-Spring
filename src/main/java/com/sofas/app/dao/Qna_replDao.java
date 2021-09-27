@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.sofas.app.dto.Qna_replDto;
+import com.sofas.app.bean.Qna_replDto;
 
 
 public class Qna_replDao {

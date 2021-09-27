@@ -7,15 +7,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sofas.app.bean.AnnounceDto;
+import com.sofas.app.bean.Announce_joinDto;
+import com.sofas.app.bean.MemberDto;
+import com.sofas.app.bean.Qna_boardDto;
+import com.sofas.app.bean.Qna_board_joinDto;
+import com.sofas.app.bean.Qna_replDto;
 import com.sofas.app.dao.AnnounceDao;
 import com.sofas.app.dao.Qna_boardDao;
 import com.sofas.app.dao.Qna_replDao;
-import com.sofas.app.dto.AnnounceDto;
-import com.sofas.app.dto.Announce_joinDto;
-import com.sofas.app.dto.MemberDto;
-import com.sofas.app.dto.Qna_boardDto;
-import com.sofas.app.dto.Qna_board_joinDto;
-import com.sofas.app.dto.Qna_replDto;
 
 public class HelpPageHandler implements CommonHandler {
 

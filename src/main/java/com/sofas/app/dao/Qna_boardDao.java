@@ -5,8 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-import com.sofas.app.dto.Qna_boardDto;
-import com.sofas.app.dto.Qna_board_joinDto;
+import com.sofas.app.bean.Qna_boardDto;
+import com.sofas.app.bean.Qna_board_joinDto;
 
 
 public class Qna_boardDao {

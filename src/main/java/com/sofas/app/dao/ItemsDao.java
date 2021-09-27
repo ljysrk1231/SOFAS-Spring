@@ -4,27 +4,27 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Vector;
 
-import com.sofas.app.dto.ItemsDto;
-import com.sofas.app.dto.Items_ReviewDto;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+import com.sofas.app.bean.ItemsDto;
+import com.sofas.app.bean.Items_ReviewDto;
 
+@Repository
 public class ItemsDao {
+	
+	@Autowired
+	private SqlSession sqlSession;
+	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	int result = 0;
 	CommonDao commonDao = null;
-
-	public ItemsDao() {
-		commonDao = new CommonDao();
-		try {
-			conn = commonDao.pool.getConnection();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	public int itemsInsert(ItemsDto itemsDto) {
 		try {
@@ -176,38 +176,8 @@ public class ItemsDao {
 		return items;
 	}
 	
-	public Vector<Items_ReviewDto> SelectBestItem() {
-		Vector<Items_ReviewDto> items = new Vector<>();
-		try {
-			String sql = "SELECT items.items_idx,"
-					+ " items_name, price, "
-					+ "items_img, "
-					+ "items_category, "
-					+ "sales_cnt, "
-					+ "(SELECT AVG(review_star) FROM review WHERE items.items_idx = review.items_idx) AS items_star_avg, "
-					+ "(SELECT COUNT(review_idx) FROM review WHERE items.items_idx = review.items_idx) AS items_review_cnt "
-					+ "FROM items "
-					+ "ORDER BY sales_cnt desc";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				Items_ReviewDto items_RDto = new Items_ReviewDto();
-				items_RDto.setItems_idx(rs.getInt(1));
-				items_RDto.setItems_name(rs.getString(2));
-				items_RDto.setPrice(rs.getInt(3));
-				items_RDto.setItems_img(rs.getString(4));
-				items_RDto.setItems_category(rs.getString(5));
-				items_RDto.setSales_cnt(rs.getInt(6));
-				items_RDto.setItems_star_avg(rs.getDouble(7));
-				items_RDto.setItems_review_cnt(rs.getInt(8));
-				items.add(items_RDto);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			commonDao.freeConnection(rs, pstmt, conn);
-		}
-		return items;
+	public List<Items_ReviewDto> SelectBestItem() {
+		return sqlSession.selectList("com.sofas.items.selectBestItem");
 	}
 	
 	public Items_ReviewDto getItemInfo(int idx) {

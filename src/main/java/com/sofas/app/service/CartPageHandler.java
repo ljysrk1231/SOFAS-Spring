@@ -8,10 +8,10 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sofas.app.bean.CartInfoDto;
+import com.sofas.app.bean.ItemsDto;
+import com.sofas.app.bean.MemberDto;
 import com.sofas.app.dao.ItemsDao;
-import com.sofas.app.dto.CartInfoDto;
-import com.sofas.app.dto.ItemsDto;
-import com.sofas.app.dto.MemberDto;
 
 public class CartPageHandler implements CommonHandler {
 

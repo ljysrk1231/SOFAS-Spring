@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.sofas.app.bean.MemberDto;
+import com.sofas.app.bean.OrderlistDto;
+import com.sofas.app.bean.OrderlistItemDto;
 import com.sofas.app.dao.ItemsDao;
 import com.sofas.app.dao.OrderlistDao;
 import com.sofas.app.dao.OrderlistItemDao;
-import com.sofas.app.dto.MemberDto;
-import com.sofas.app.dto.OrderlistDto;
-import com.sofas.app.dto.OrderlistItemDto;
 
 
 public class PaymentProcHandler implements CommonHandler {

@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-import com.sofas.app.dto.MemberDto;
+import com.sofas.app.bean.MemberDto;
 
 public class MemberDao {
 	Connection conn = null;
