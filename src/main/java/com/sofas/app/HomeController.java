@@ -52,7 +52,7 @@ public class HomeController {
 		map.put("pw",pw);
 		MemberDto dto = memberDao.loginMember(map);
 		if(dto != null) {
-			session.setAttribute("userInfo", dto);
+			session.setAttribute("memberInfo", dto);
 		}
 		return "redirect:/Home.do";
 	}
